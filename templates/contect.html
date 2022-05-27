@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row " id="banner2">
+<div class="col-md-12">
+<h1 class="text-center style8 display-4">Contact us</h1>
+</div>
+</div>
+
+<div class="row p-5">
+<div class="col-md-7">
+<div data-aos="fade-up"
+     data-aos-duration="3000">
+<h1 class=" text-center display-6">Get In Touch</h1>
+<div class="row p-2">
+<div class="col-md-10 offset-1">
+<div class="row p-3">
+<div class="col-md-6">
+<form action="{% url 'apply'%}" method='post'>
+{% csrf_token %}
+<label for="name"> Name</label>
+<input type="text" class="form-control" name="name" placeholder="enter your name"/>
+<label for="email">Your Email</label>
+<input type="email" class="form-control" name="email" placeholder="enter your mail" id="email"/>
+</div>
+<div class="col-md-6">
+<label for="number">Phone Number</label>
+<input type="number" class="form-control" name="number" placeholder="enter your Phone Number" maxlength="10" pattern="[6/7/8/9][0-9]{9}"/>
+<label for="subject">Your Subject</label>
+<input type="text" class="form-control" name="subject" placeholder="enter your subject"/>
+</div>
+
+<div class="col-md-12">
+<label for="subject">Your message</label>
+<input type="text" class="form-control" name="message" placeholder="enter your message"/>
+<div class="p-5 text-center">
+<button class="btn btn-success">SENT MESSAGE</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="col-md-5" id="con">
+<div class="row">
+<div class="col-md-12">
+<div data-aos="fade-down-left"
+	data-aos-duration="3000">
+<h1 class="display-6">Our Contact Detail</h1>
+<h5>Need any consultations contact with us</h5>
+<div class="row p-3"id="conn">
+<div class="row">
+<div class="col-md-2">
+<img src="{% static 'image/phone.png' %}" height="50px" width="100%">
+</div>
+<div class="col-md-10">
+<h5>Phone Number</h5>
+<p>+1 (888) 123-5678</br>
+(+44)123 456 789</p>
+</div>
+</div>
+<div class="row">
+<div class="col-md-2">
+<img src="{% static 'image/mailn.png' %}" height="50px" width="100%">
+</div>
+<div class="col-md-10">
+<h5>Email Address</h5>
+<p>info@example.com</br>
+contact@example.com</p>
+</div>
+</div>
+</div>
+
+
+<div class="row">
+<div class="col-md-2">
+<img src="{% static 'image/locl.jfif' %}" height="50px" width="100%">
+</div>
+<div class="col-md-10">
+<h5>Loaction</h5>
+<p>Guild Street 51, North Town,</br>
+ London-06192, UK</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+
+<div class="row p-5">
+<div class="col-md-12"id="shadow">
+<div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27478.63955264276!2d74.79850063512899!3d30.582345678123254!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x391751b21cd7963b%3A0x210983dfccf93487!2sKot%20Kapura%2C%20Punjab!5e0!3m2!1sen!2sin!4v1648008997514!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</div>
+</div>
+</div>
+
+{% endblock %}

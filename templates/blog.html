@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row " id="banner3">
+<div class="col-md-12">
+<h1 class="text-center style8 display-1">Blog List</h1>
+</div>
+</div>
+
+
+<div class="row" id="dis3">
+<div class="col-md-10 offset-1">
+
+<div class="row">
+
+<div class="col-md-8" id="dis">
+{% for blog in gly %}
+<div class="row">
+
+<div class="col-md-12" id="link">
+<div data-aos="fade-up"
+     data-aos-duration="2000">
+<img src=" /media/{{blog.image}}" height="500px" width="100%"/>
+</div>
+<div data-aos="flip-left"
+     data-aos-easing="ease-out-cubic"
+     data-aos-duration="2000">
+<h1 class="text-center">{{ blog.title }}</h1>
+<p class="text-center">{{ blog.des | truncatechars:250 }}</p>
+<p>{{ blog.date }}</p>
+</div>
+<button id="btn" class="btn btn-dark btn-lg"><a href="/blogdetals/{{blog.id}}">Read more</a></button>
+</div>
+</div>
+{% endfor %}
+</div>
+
+
+
+<div class="col-md-4 p-5" id="dis1">
+<div class=" border p-2">
+<h2>Clients</h2>
+<div class=" border p-4">
+<div class="text-center">
+<img src="{% static 'image/cc.png' %}" height="90px" width="100px"/>
+</div>
+<h5 class="text-center">Aidan Gratton</h5>
+<h6 class="text-center">As designers attempting to creating functional work</h6>
+</div>
+</div>
+
+<div class=" border p-2">
+<h2 class="text-center p-4">Categories</h2>
+<ol class="list-group list-group-numbered">
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Diet</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">10</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Nutritionist</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">10</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Fitness</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">15</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">Health</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">07</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">protein</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">09</span>
+  </li>
+  <li class="list-group-item d-flex justify-content-between align-items-start">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold">weight loss</div>
+    </div>
+    <span class="badge bg-primary rounded-pill">20</span>
+  </li>
+  
+</ol>
+</div>
+
+<div class=" border p-4">
+<h3>popular Activites</h3>
+<div class="row p-2 ">
+<div class="col-md-5 ">
+<img src="{% static 'image/blog5.jpg' %}" width="100%"/>
+</div>
+<div class="col-md-7 ">
+<div class="col-md-12 ">
+<p>Drinking water can prevent dehydration.</p>
+</div>
+</div>
+</div>
+<div class="row p-2">
+<div class="col-md-5 p-2">
+<img src="{% static 'image/blog6.jpg' %}"/>
+</div>
+<div class="col-md-7">
+<div class="col-md-12">
+<p>The best time to drink water to maximize energy</p>
+</div>
+</div>
+</div>
+<div class="row p-2">
+<div class="col-md-5 p-2">
+<img src="{% static 'image/blog7.jpg' %}"/>
+</div>
+<div class="col-md-7">
+<div class="col-md-12">
+<p>The best time to drink water to maximize energy</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class=" border p-4">
+<h3>Popular Tags</h3>
+<ul class="list-group list-group-horizontal">
+  <li class="list-group-item">Nutrition</li>
+  <li class="list-group-item">Fitness</li>
+  <li class="list-group-item">Diet</li>
+</ul>
+<ul class="list-group list-group-horizontal-sm">
+  <li class="list-group-item">Health</li>
+  <li class="list-group-item">Protein</li>
+  <li class="list-group-item">Advice</li>
+</ul>
+<ul class="list-group list-group-horizontal-md">
+  <li class="list-group-item">Workout</li>
+  <li class="list-group-item">Excercise</li>
+</ul>
+</div>
+<div class=" border p-4">
+<h3>Follow Us</h3>
+<div class="row">
+<div class="col-md-12">
+<img src="{% static 'image/ff.jpg' %}" height="400px" width="100%"/>
+</div>
+</div>
+</div>
+</div>
+
+
+</div>
+</div>
+</div>
+
+
+<div class="row p-5">
+</div>
+
+
+
+
+
+{% endblock %}

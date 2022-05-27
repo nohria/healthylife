@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row">
+<div class="col-md-8 offset-2" id="dis">
+
+<img src=" /media/{{gly.image}}" height="500px" width="100%">
+<h1 class="text-center">{{ gly.title }}</h1>
+<p>{{ gly.des  }}</p>
+<p>{{ gly.date }}</p>
+</div>
+</div>
+
+{% endblock %}

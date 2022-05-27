@@ -1,0 +1,52 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row pt-5">
+<div class="col-md-6" id="banner10">
+<h1 class="text-center style8 display-1">Dietplans</h1>
+</div>
+<div class="col-md-6" id="dietplan">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+{% for dietplan in dt %}
+  <li class="nav-item" role="presentation">
+    <button class="nav-link " id="monday-tab" data-bs-toggle="tab" data-bs-target="#monday{{ dietplan.id }}" type="button" role="tab" aria-controls="monday" aria-selected="true">Day {{ dietplan.id }}</button>
+  </li>
+  {% endfor %}
+</ul>
+<div class="tab-content p-5" id="myTabContent">
+{% for dietplan in dt %}
+<div class="tab-pane fade " id="monday{{ dietplan.id }}" role="tabpanel" aria-labelledby="monday-tab">
+<div class="row">
+<div data-aos="flip-left"
+	data-aos-duration="3000">
+<h1>{{dietplan.title }}</h1>
+</div>
+<div data-aos="flip-up"
+	data-aos-duration="3000">
+<p>{{dietplan.des |safe}}</p>
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</div>
+
+
+
+
+<script>
+$(document).ready(function(){
+
+$(".nav-item:first").addClass("active");
+$(".tab-pane:first").addClass("active show");
+});
+</script>
+
+<div class="row p-4">
+</div>
+
+
+{% endblock %}

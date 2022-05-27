@@ -1,0 +1,340 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+
+<div class="row" id="banner">
+
+<div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+	
+      <img src="{% static 'image/2.webp' %}" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h3 id="fond" class="display-4">To keep the body in good health is a duty…otherwise we shall not be able to keep the mind strong and clear</h3>
+<button class="btn btn-success"><a href="/home/" class="nav-link text-light">Get started</a></button>
+<button class="btn btn-warning"><a href="/lunch/" class="nav-link text-light">View meal plan</a></button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/picf.jpg' %}" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h3 id="fond"class="display-4">To keep the body in good health is a duty…otherwise we shall not be able to keep the mind strong and clear</h3>
+<button class="btn btn-success"><a href="/home/" class="nav-link text-light">Get started</a></button>
+<button class="btn btn-warning"><a href="/lunch/" class="nav-link text-light">View meal plan</a></button>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'image/4.jpg' %}" class="d-block w-100" alt="..."/>
+      <div class="carousel-caption d-none d-md-block">
+        <h3 id="fond"class="display-4">To keep the body in good health is a duty…otherwise we shall not be able to keep the mind strong and clear</h3>
+<button class="btn btn-success"><a href="/home/" class="nav-link text-light">get started</a></button>
+<button class="btn btn-warning"><a href="/breakfast/" class="nav-link text-light">view meal plan</a></button>
+      </div>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
+
+
+
+<div class="row p-5">
+<div class="col-md-12">
+<div data-aos="flip-up"
+	 data-aos-duration="3000">
+<h1 class="text-center display-4">If you’re ready to change your relationship with food for the better, follow us @healthfirst for daily meal plans and updates.</h1>
+<h6 class="text-center">Eating foods that are good for you and staying physically active may help you reach and maintain a healthy weight and improve how you feel.</h6>
+</div>
+</div>
+</div>
+
+
+
+<div class="row p-5" id="style">
+<div class="col-md-6">
+</div>
+<div class="col-md-6 p-5">
+<h1 class="text-center display-6">The Ultimate Guide to Becoming Your Best Self: Build your Daily Routine by Optimizing Your Mind, Body and Spirit</h1>
+<h5>Today, I have more drive, motivation, and passion, which makes reaching my goals easier…and more fulfilling. I have more physical and mental energy to make it through my days…even the really tough ones (which still show up). I feel happier and more satisfied with the quality and depth of my life.</h5>
+</div>
+</div>
+
+
+
+<div class="row p-5" >
+<div class="col-md-12">
+<div data-aos="fade-up"
+     data-aos-duration="3000">
+<h1 class="text-center display-4">Amazing Blog</h1>
+<p class="text-center">Think of this as healthy vegetarian cooking, made simple. Writer Alex is a registered dietitian.<p>
+</div>
+</div>
+</div>
+
+
+
+<div class="row p-2"id="style2">
+{% for gallery in gly %}
+<div class="col-md-3 zoom">
+<img src="/media/{{gallery.image }}" height="500px" width="100%">
+<h3>{{ gallery.title }}</h3>
+<p>{{gallery.des | truncatechars:120 }}</p>
+<p class="text-center">{{gallery.date }}</p>
+</div>
+
+{% endfor%}
+
+</div>
+
+
+
+
+
+<div class="row p-5" id="style3">
+<div class="col-md-12">
+<div data-aos="fade-up"
+     data-aos-duration="3000">
+<h4 class="text-center display-4">healthy food, for breakfast</h4>
+<h2 class="text-center">healthy and tasty food</h2>
+<h2 class="text-center">with natural</h2>
+<h2 class="text-center">ingredients</h2>
+</div>
+</div>
+</div>
+
+
+<div class="row p-5">
+<div class="col-md-6">
+<h1 class=" text-center display-6">Calculate Your BMI</h1>
+<p>BMI calculator generates the number of calories your body burns per day at rest. Your BMR with activity factor is the number of calories your body burns per day based on the activity factor you selected.</p>
+
+<div class="container">
+      
+        <p>Height (in cm)</p>
+  
+        <input type="text" id="height">
+  
+        <p>Weight (in kg)</p>
+  
+        <input type="text" id="weight">
+  
+        <button id="btn" class="btn btn-dark">Calculate</button>
+  
+        <div id="result" class="p-3"></div>
+    </div>
+</div>
+<div class="col-md-6">
+<h1 class="text-center display-6">BMI Calculator Chart</h1>
+<table class="table">
+<tr>
+<th>BMI</th>
+<th>Weight status</th>
+</tr>
+
+<tr>
+<td>Below 18.5</td>
+<td>Underweight</td>
+</tr>
+
+<tr>
+<td>18.5 - 24.9</td>
+<td>Healthy</td>
+</tr>
+
+<tr>
+<td>25.0 - 29.9</td>
+<td>Overweight</td>
+</tr>
+
+<tr>
+<td>30.0 - and Above</td>
+<td>Obese</td>
+</tr>
+</table>
+<h5> BMR Metabolic Rate / BMI Body Mass Index</h5>
+</div>
+</div>
+
+
+<div class="row p-4 howtostart" id="style4">
+<div class="col-md-12" >
+<div data-aos="fade-down"
+     data-aos-easing="linear"
+     data-aos-duration="1500">
+<h4 class="text-center">How to start</h4>
+<h1 class="text-center display-6">It's easy to start today!</h1>
+<p class="text-center">We connect buyers and sellers of natural, organic, environmentally sound</br> products. We find the best suppliers and makers of natural</br>and organic products.</p>
+<BR/>
+</div>
+</div>
+
+
+<div class="row p-4">
+<div class="col-md-3 OUTLINE" id="effect">
+<div class="containerr">
+<div data-aos="flip-left"
+    data-aos-duration="3000">
+<img src="{% static 'image/dieti.webp' %}" height="500px" width="100%" class="img1"/>
+</div>
+<div class="overlay">
+</div>
+</div>
+<h4 class="p-2">Registered Dietician</h4>
+<p>Dietitians provide food and nutrition information, and support people to improve their health.</p>
+</div>
+
+<div class="col-md-3 OUTLINE" id="effect">
+<div class="containerr">
+<div data-aos="flip-left"
+   data-aos-duration="3000">
+<img src="{% static 'image/ex.jpg' %}" height="400px" width="100%" class="img1"/>
+</div>
+<div class="overlay">
+</div>
+</div>
+<h4 class="p-2">Schedule Exercise</h4>
+<p>“‘Making’ time for your workout is just like scheduling a meeting with yourself. </p>
+</div>
+<div class="col-md-3 OUTLINE" id="effect">
+<div class="containerr">
+<div data-aos="flip-left"
+   data-aos-duration="3000">
+<img src="{% static 'image/food10.jpg' %}" height="500px" width="100%" class="img1"/>
+</div>
+<div class="overlay">
+</div>
+</div>
+<h4 class="p-2">Nutrition Consultation</h4>
+<p>Increase energy, improve sleep quality, strengthen your immune system, boost mood, increase concentration, and reduce symptoms of disease.</p>
+</div>
+<div class="col-md-3 OUTLINE" id="effect">
+<div class="containerr">
+<div data-aos="flip-left"
+   data-aos-duration="3000">
+<img src="{% static 'image/food11.jpg' %}" height="400px" width="100%" class="img1"/>
+</div>
+<div class="overlay">
+</div>
+</div>
+<h4 class="p-2">Disease Management</h4>
+<p> improve the health of persons with chronic conditions and reduce associated costs from avoidable complications</p>
+</div>
+</div>
+</div>
+
+
+
+<div class="row p-4" id="style4">
+<div class="col-md-12">
+<div data-aos="zoom-in-right"
+    data-aos-duration="1500">
+<h4 class="text-center">TESTIMONIAL</h4>
+<h1 class="text-center display-5"> Our Clients Say</h1>
+<p class="text-center">Phasellus facilisis malesuada blandit. Morbi hendrerit eu elit sit amet euismod. Nam</br> a efficitur nulla. Duis placerat urna in ex pulvinar aliquet.</p>
+</div>
+</div>
+</div>
+
+<div class="row p-5" id="style5">
+<div class="col-md-4">
+<div class="row">
+<div class="col-md-4">
+<img src="{% static 'image/doc.jpg' %}" height="130px" width="130px"/>
+</div>
+<div class="col-md-8">
+<h4>Hazel Dawson</h4>
+<p >Before this, my workout routines were getting old. I felt like I wasn’t accomplishing any of my fitness goals and I wasn’t able to see any progress with my body.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="row">
+<div class="col-md-4">
+<img src="{% static 'image/doc2.jfif' %}" height="130px" width="130px"/>
+</div>
+<div class="col-md-8">
+<h4>Minerva Schmidt</h4>
+<p >I feel proud to be part of that, The cool thing about that is that he had a propensity for building muscle, which in turn makes it easier to lose the extra body fat.</p>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="row">
+<div class="col-md-4">
+<img src="{% static 'image/doc3.jfif' %}" height="130px" width="130px"/>
+</div>
+<div class="col-md-8">
+<h4>Hazel Dawson</h4>
+<p >After working with several different personal trainers over the past 10 years, it was refreshing to finally get to work out with a professional like Chris.</p>
+</div>
+</div>
+</div>
+</div>
+ 
+
+
+<div class="container">
+    <div class="row p-5">
+        <div class="col-md-3 col-sm-6">
+            <div class="counter">
+                <div class="counter-icon">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div class="counter-content">
+                    <h3>NUTRITION PROGRAMS</h3>
+                    <span class="counter-value">56</span>
+                </div>
+            </div>
+            </div>
+			<div class="col-md-3 col-sm-6">
+            <div class="counter blue">
+                <div class="counter-icon">
+                    <i class="fa fa-rocket"></i>
+                </div>
+                <div class="counter-content">
+                    <h3>COACHING CERTIFICATES</h3>
+                    <span class="counter-value">590</span>
+                </div>
+            </div>
+            </div>
+			<div class="col-md-3 col-sm-6">
+            <div class="counter">
+                <div class="counter-icon">
+                    <i class="fa fa-globe"></i>
+                </div>
+                <div class="counter-content">
+                    <h3>WORKOUT SESSIONS</h3>
+                    <span class="counter-value">58</span>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="counter blue">
+                <div class="counter-icon">
+                    <i class="fa fa-rocket"></i>
+                </div>
+                <div class="counter-content">
+                    <h3>Happy Customers</h3>
+                    <span class="counter-value">9864</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

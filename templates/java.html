@@ -1,0 +1,21 @@
+<html>
+<head>
+<title>jqji</title>
+<link href="bootstrap/css/bootstrap.min.css" type="text/css" rel="stylesheet"/>
+<link href="bootstrap/css/bootstrap-grid.min.css" type="text/css" rel="stylesheet"/>
+<script src="jquery.js"></script>
+</head>
+<body>
+<div class="container">
+<button id="btn">click</button>
+<div id="d1" style="height:300px; width:400px; background:pink;"></div>
+</div>
+</body>
+<script>
+$(document).ready(function(){
+$("btn").click(function(){
+$("d1").fadeToggle(3000);
+});
+});
+</script>
+</html>
